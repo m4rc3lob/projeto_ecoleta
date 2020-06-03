@@ -144,3 +144,52 @@ form button:hover {
     background-color: #2fb86e;
 }
 
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* três colunas em frações iguais*/
+    gap: 16px;
+
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none;
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+
+    height: 180px;
+
+    padding: 32px 24px 16px; /*preencimento topo, laterais e fundo */
+
+    display: flex;
+    flex-direction: column; /* coloca o flex em direção vertical de cima para baixo*/
+    align-items: center; /* alinha os objetos dentro do flex no mesmo eixo y*/
+    justify-content: space-between; /* justifica os elementos... nesse caso no sentido vertical devido a direção do flex (column) */
+
+    text-align: center; /* alinha os textos no centro */
+
+    cursor: pointer; /* muda a seta do mouse, para dar sensação de objeto selecionável*/
+}
+
+.items-grid li span {
+    margin-top: 12px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    
+    color: var(--title-color);
+}
+
+.items-grid li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;  /* aqui todos os eventos de seleção para as imagens e textos dentro de li vão ser desativados*/
+}
+
