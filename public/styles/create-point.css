@@ -1,0 +1,206 @@
+#page-create-point {
+    width: 90%; /* Largura normal 90% da página*/
+    max-width: 1100px; /* Largura máxima, maior que isso a caixa não cresce e permanece sua lagura fixa */
+
+    /* alinhamento de caixa pelo lado de fora */
+    margin: 0 auto; /* primeiro parametro margens verticais (top, botton) = 0. Segundo magens laterais (left, rigth) = automatico */
+}
+
+#page-create-point header {
+    margin-top: 48px; /* cria uma margem na parte superio*/
+    
+    display: flex; /* coloca os elementos de header dentro de um display flexivel*/
+    justify-content: space-between; /* justifica os elementos na linha, preenchendo toda linha e criando um espaço entre eles*/
+    align-items: center; /* centraliza os elementos do display no mesmo eixo x*/
+}
+
+#page-create-point header a {
+    color: var(--title-color); 
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+}
+
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url('../assets/arrow-left.svg'); /* ATENÇÃO: toda imagem deve vim acompanhada das dimensções, se não, não vai funcionar!*/
+
+    display: flex;
+
+    width: 20px; /* largura da imagem*/
+    height: 24px; /* altura da imagem*/
+
+    /*OBS: para modificar a cor da imagem, 
+    modifiquei o parâmetro "stroke" dentro do arquivo arrow-left.svg 
+    substituindo a cor existente por "#34CB79"... dessa forma o icone ficou verde 
+    */
+}
+
+form {
+    background-color: white; /*fundo do formulário*/
+
+    margin: 80px auto; /* margem vertical depois margem lateral */
+    padding: 64px; /* resoonsavel pelo preenchimento interno da caixa*/
+
+    border-radius: 8px; /* borda arredondada */
+
+    max-width: 730px; /* largura máxima */
+    box-sizing: border-box; /* colocando a borda como limite da caixa /*
+
+    
+    /*OBS: limitar o tamanho de uma coixa pela sua bora
+    é um modelo que vamos adotar como padrão para todo projeto.
+    Por isso que vamos adicionar essa linha a todos os elementos (*)
+    dentro do main.css 
+    */ 
+}
+
+form h1 {
+    font-size: 36px;
+}
+
+form fieldset {
+    margin-top: 64px;
+
+    border: 0;
+}
+
+form legend {
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+form legend h2 {
+    font-size: 24px;
+}
+
+form legend span {
+    font-size: 14px;
+    color: var(--title-color);
+}
+
+form .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* coloca os elementos de flex alinhados na mesma coluna*/
+
+    margin-bottom: 24px;
+}
+
+form .field-group {
+    display: flex;
+
+}
+
+form input, 
+form select {
+    background-color: #f0f0f5;
+
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+
+    outline: none;
+}
+
+form select { 
+
+    /* Aqui estamos desabilitando algumas config de formatação dos navegadores
+    google e mozila, pois as vezes eles não conseguem executar e ficam dando erro dentro do select
+    */
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field {
+
+    /* form .field-group .field + .field escrever cód assim diz ao CSS que vamos pegar as duas fiels mas 
+    as alterações serão realizadas apenas no segundo, ou seja o que vem depois do +*/
+    margin-left: 24px;
+}
+
+form button {
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+
+    border: 0;
+
+    margin-top: 40px;
+
+    transition: background-color 400ms;
+}
+
+form button:hover {
+    background-color: #2fb86e;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* três colunas em frações iguais*/
+    gap: 16px;
+
+}
+
+.items-grid li {
+    background-color: #f5f5f5;
+    list-style: none;
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+
+    height: 180px;
+
+    padding: 32px 24px 16px; /*preencimento topo, laterais e fundo */
+
+    display: flex;
+    flex-direction: column; /* coloca o flex em direção vertical de cima para baixo*/
+    align-items: center; /* alinha os objetos dentro do flex no mesmo eixo y*/
+    justify-content: space-between; /* justifica os elementos... nesse caso no sentido vertical devido a direção do flex (column) */
+
+    text-align: center; /* alinha os textos no centro */
+
+    cursor: pointer; /* muda a seta do mouse, para dar sensação de objeto selecionável*/
+}
+
+.items-grid li span {
+    margin-top: 12px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    
+    color: var(--title-color);
+}
+
+.items-grid li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;  /* aqui todos os eventos de seleção para as imagens e textos dentro de li vão ser desativados*/
+}
+
