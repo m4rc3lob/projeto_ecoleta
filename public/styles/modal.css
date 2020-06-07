@@ -24,6 +24,12 @@
     width: 420px;
 }
 
+#modal .content h1 {
+    color: white;
+
+    width: 420px;
+}
+
 #modal .header {
     display: flex;
     align-items: center;
@@ -86,4 +92,29 @@
 
 #modal form button:hover {
     background-color: #2fb85e;
+}
+
+/*config para paginal point-created*/
+
+#modal .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+#modal .modalContent img {
+
+    fill: var(--primary-color);
+    width: 70px;
+    height: 70px;
+}
+
+#modal .modalContent h1 {
+
+    color: white;
+    width: none;
+    margin-top: 32px;
+    align-items: center;
+
 }

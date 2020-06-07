@@ -38,7 +38,10 @@ nunjucks.configure("src/views", {
 // req: requisição      res: resposta
 
 server.get("/", (req, res) => {
-    return res.render("index.html", { title: "Título"}) //nossa res puxa o arquivo index.html e passa pelo motor do nunjucks
+    
+    
+    return res.render("index.html", { title: "Título"}) 
+    //nossa res puxa o arquivo index.html e passa pelo motor do nunjucks
 })
 
 server.get("/create-point", (req, res) => {
@@ -53,7 +56,7 @@ server.post("/savepoint", (req, res) => {
 
     //inserir dados no banco de dados
      const query = `
-            INSERT INTO places (
+            INSERT INT places (
                 image,
                 name,
                 address,
@@ -74,20 +77,27 @@ server.post("/savepoint", (req, res) => {
         
         ]
     
-     function afterInsertData(err){
-         if (err) { 
-             return console.log(err) 
-         }
+    function afterInsertData(err){
+        if (err) { 
+            console.log(err)
+            //return res.render("create-point.html", {saved: true})
+            return res.send("Erro no cadastro")
+         
+        }
+            
+        console.log("Cadastrado com sucesso")
+        console.log(this)
 
-         console.log("Cadastro com sucesso")
-         console.log(this)
-
-         return res.send("ok")
-     }
+        return res.render("create-point.html", {saved: true})   
+         
+    }
     
-     db.run(query, values, afterInsertData)
+    db.run(query, values, afterInsertData)
     
 })
+
+
+
 
 
 server.get("/search", (req, res) => {
@@ -100,12 +110,11 @@ server.get("/search", (req, res) => {
 
         const total = rows.length
         
-        //mostrar a pagina html com os dados do banco de dados
+        
         return res.render("search-results.html", { places: rows, total: total })
     })
 
-    
-    
+      
 })
 
 //ligar o servidor

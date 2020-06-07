@@ -10,8 +10,10 @@
     
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="/styles/modal.css">
     
     <link rel="stylesheet" href="/styles/responsive.css">
+    
     
 
 </head>
@@ -123,8 +125,15 @@
             <button type="submit">Cadastrar ponto de coleta</button>
 
         </form>
-
+ 
     </div>
+
+    {% block modal %}
+        {% if saved %}
+            {% include "partials/point-created.html"%}
+        {% endif %}
+    {% endblock modal %}
+
     
     <script src="/scripts/creat-point.js"></script>
 </body>
