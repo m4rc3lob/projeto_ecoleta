@@ -1,12 +1,17 @@
 /*criação de um pseudo elemento na página*/
+body {
+    background-color: white;
+}
+
 body::after {
     content: "";
-    position: fixed;
-    background: white;
-    top: 280px;
+    position: absolute;
+    background: #f0f0f5;
+    top: 0px;
     right: 0;
     left: 0;
     bottom: 0;
+    height: 16rem; /* o rem torna minha config dinamica, ela vai deformar conforme a pagina*/
     z-index: -1; /*eixo z, profundidade, ideia de camada, dessa forma o pseudo elemento fica "abaixo" dos demais que estão na camada "0" */
 }
 

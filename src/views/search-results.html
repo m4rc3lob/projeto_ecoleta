@@ -22,7 +22,7 @@
         {% include "partials/page-header.html" %}
 
 
-        {% if total > 0%}
+        {% if total > 0 %}
             <main>
 
                 <h4>
@@ -51,8 +51,13 @@
             </main>
 
         {% else %}
+            <main>
 
-        <h3><strong>Nenhum</strong> local enconstrado</h3>
+                <h4>
+                    <strong>{{ total }}</strong> ponto(s) enconstrado(s)  <!--elemento HTML <strong> dá ao texto uma forte importância, e é tipicamente mostrado em negrito.-->
+                </h4>
+
+            </main>
 
         {% endif %}        
         

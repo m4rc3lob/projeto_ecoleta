@@ -97,13 +97,25 @@ server.post("/savepoint", (req, res) => {
 })
 
 
+server.get("/serach", (req, res) => {
 
+})
 
 
 server.get("/search", (req, res) => {
+
     
+    //quando não encontra itens cadastrados na cidade a pesquisa deve vim zerada
+    const search = req.query.search
+
+    if ( search == "") {
+        //pesquisa vazia
+        return res.render("search-results.html", { total: 0 })
+    }
+
+
     //pegar os dados do banco de dados
-    db.all(`SELECT * FROM places`, function(err, rows) {
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows) {
         if (err) { 
             return console.log(err) 
         }
