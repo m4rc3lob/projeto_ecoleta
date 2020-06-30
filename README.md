@@ -1,6 +1,6 @@
-<h2 align="center">
+<h1 align="center">
 Ecoleta
-</h2>
+</h1>
 
 ![index](https://user-images.githubusercontent.com/65955916/86075224-e7172500-ba5d-11ea-92b0-28cfe07fd2f1.png)
 
@@ -14,6 +14,16 @@ Ecoleta
 ## Objetivo
 
 O projeto tem como finalidade estabelecer uma conexão entre empresas e/ou entidades que coletam resíduos (orgânicos e inorgânicos) às pessoas e/ou entidades que necessitam constantemente descartar esses resíduos. Solucionando um grande problema recorrente que é o descarte inadequado do lixo, facilitando o processo de recliclagem e reutilização.
+
+## Funcionalidades
+
+O projeto Ecoleta possui alguma funcionalidades que podem ser descritas na tabela a seguir.
+
+| Página | Descrição |
+| --- | --- |
+| page-home | Página principal do projeto que exibe um pequeno resumo sobre e permite ao usuário explorar as demais funcionalidades, como pesquisa ou cadastro de locais |
+| page-search-resolt | Página que exibe todos os pontos cadastrados para o local pesquisado, exibindo uma imagem e dados de cada local |
+| page-create-point | Página de cadastro que registra as informações de um novo ponto de coleta e armazena no banco de dados do projeto |
 
 ## Tecnologias Utilizadas
 
