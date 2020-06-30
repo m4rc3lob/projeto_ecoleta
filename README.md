@@ -2,6 +2,7 @@
 Ecoleta
 </h2>
 
+![index](https://user-images.githubusercontent.com/65955916/86075224-e7172500-ba5d-11ea-92b0-28cfe07fd2f1.png)
 
 <h3 align="center">  
   <a href="#projeto_source-objetivo">Objetivo</a> |
